@@ -155,7 +155,7 @@ class cone(threedimensionals):
 class sphere(threedimensionals):
     def __init__(self,radius):
         self.radius=radius
-        self.__having_volume='yes'
+        self.__having_volume='Yes'
         self.__shape_name='sphere'
         self.__diameter=self.radius*2
         self.n_dimensions=3
@@ -178,3 +178,65 @@ class sphere(threedimensionals):
     def sides(self):
          return('it doesnt have any sepecial sides')
  #dr kol klas haye sebodi az class threedimensionals ers bari mikonnd       
+
+class cylindre(threedimensionals):
+    def __init__(self,height,radius):
+        self.__name='cylindre'
+        self.radius=radius
+        self.height=height
+        self.n_dimensions=3
+        self.equal_sides:'no'
+        
+    def get_dimensions(self):
+        super().dimensions()
+
+          
+    def area(self):
+        
+        
+        return('it doesnt have area')
+          
+    def volume(self):
+        self.volume=(2*math.pi)*((self.radius)**2)*self.height
+        return("the volume is {} ".format(round(self.volume,2)))
+          
+    def total_area(self):
+        self.total_area=(2*math.pi*self.radius)*(self.height)+((math.pi*(self.radius)**2))
+        return('the total area of this sphere is {} '.format(round(self.total_area,2)))
+          
+    def sides(self):
+        return('due to the fact that its a 3d shape we can not count any side for it')
+  
+class pyramid(threedimensionals):
+    def __init__(self,height,length,width,side):
+        self.height=height
+        self.length=length
+        self.width=width
+        
+        self.side=side
+        #encapsolation
+        self._name='pyramid'
+        self.equal_sides='not always'
+        self.n_diameter='nothing'
+        
+    def volume(self):
+        self.volume=(1/3)*(self.width*self.height)*self.height
+        return('the volume of this pyrami is {} '.format(round(self.volume,2)))
+    
+    def total_area(self):
+        self.total_area=((((((self.width/2)**2+(self.side)*2)**0.5)*(self.side+self.length/2)**2+(self.side)*2)**0.5)*self.length)+(self.width*self.height)
+        return('the total area of this pyramid is {} '.format(round(self.total_area,2)))
+     
+    def get_dimensions(self):
+        super().dimensions()
+        
+    def area(self):
+        return('it doesnt have an area')
+    
+    def sides(self):
+        return('due to the fact that its a 3d shape we can not count any side for it')
+ 
+
+
+
+
