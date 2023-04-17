@@ -378,3 +378,86 @@ class triangle(two_dimensionals):
     
     def get_dimensions(self):
         super().dimensions()
+        
+class circle(two_dimensionals):
+    def __init__(self,radius):
+        self.__name='circle'
+        self.__n_dimension=2
+        self.radius=radius
+        self.__diameter:self.radius*2
+        self.n_diameter:'uncountable'
+        
+    def sides(self):
+        return('it doesnt have sides')
+    
+    def angles(self):
+        return('it doesnt have angles')
+    
+    def get_total_area(self):
+        super().total_area()
+    
+    def get_volume(self):
+        super().volume()
+        
+    def area(self):
+        self.area=self.radius**2*2*math.pi
+        return('the area of the circle is {} '.format(round(self.area,2)))
+        
+    def diameter(self):
+        return('it have uncountable diameters')
+    
+    def perimeter(self):
+        self.perimeter=2*math.pi*self.radius
+        return('the perimeter is {} '.format(round(self.perimeter)))
+    
+    def get_dimensions(self):
+        super().dimensions()
+        
+
+    
+class diamond(two_dimensionals):
+    def __init__(self,length,sin_biggest_degree):
+        self.length=length
+        self.sins=sin_biggest_degree.sinus()#aggregation
+        self.__name='diamond'
+        self.__n_dimensions=2
+        self.n_diameter:2
+        
+    def sides(self):
+        return('diamond has 4 sides')
+    
+    def angles(self):
+        return('it has 4 angles')
+    
+    def get_total_area(self):
+        super().total_area()
+    
+    def get_volume(self):
+        super().volume()
+        
+    def area(self):
+        self.area=(self.length**2)*(self.sins)
+        return('the area of the diamond is {} '.format(round(self.area,2)))
+    
+    def perimeter(self):
+        self.perimeter=self.length*4
+        return('the perimeter of this diamond is {} '.format(self.perimeter))
+        
+    def diameter(self):
+        self.diameter1=self.length*self.sins
+        self.diameter2=((1-self.sins**2)**0.5)*self.length
+        
+        return('it has two diameter and their lenghts area  {} and {}  '.format(round(self.diameter1,2),round(self.diameter2,2)))
+    
+    def get_dimensions(self):
+        super().dimensions()
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
