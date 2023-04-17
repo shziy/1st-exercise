@@ -236,7 +236,76 @@ class pyramid(threedimensionals):
     def sides(self):
         return('due to the fact that its a 3d shape we can not count any side for it')
  
-
-
+class two_dimensionals(shapes) :
+    def __init__(self,name):
+        super().__init__()
+        self.n_dimensions:3
+        self.__having_angles:'it depends ..'
+        self.__minimum_sides_a:3
+        self.maximum_angles:'uncountable'
+        self.minimum_angles:0
+    def dimensions(self):        
+        print('its a 2 dimensional shape')
+        
+    def area(self):
+        pass
+        
+    def volume(self):
+        print('two dimensional shapes doesnt have volume')
+        
+    def total_area(self):
+        print('two dimensional shapes just have area')
+        
+    def sides(self):
+        pass
+    
+    def angles(self):
+        pass
+    
+    def perimeter(self):
+        pass
+class sin :
+    def __init__(self,degree):
+        self.degree=degree
+        
+    def sinus(self):
+        return(abs(math.sin(self.degree)))    
+    
+class square(two_dimensionals):
+    def __init__(self,length):
+        self.length=length
+        self.__name='square'
+        self.__n_dimensions=2
+        self.__equalsides:'yes'
+        self.equal_angles:'yes'
+        
+        
+        
+    def sides(self):
+        return('square has 4 sides')
+    
+    def angles(self):
+        return('it has 4 angles')
+    
+    def get_total_area(self):
+        super().total_area()
+    
+    def get_volume(self):
+        super().volume()
+        
+    def area(self):
+        self.area=self.lenght**2
+        return('the area og this square is{} '.format(round(self.area,2)))
+    
+    def perimeter(self):
+        self.perimeter=self.length*4
+        return('the perimeter of this square is {} '.format(round(self.perimeter,2)))
+        
+    def diameter(self):
+        self.diameter=(2*self.length**2)**0.5
+        return('it has twi diameter and its lenght is {} '.format(round(self.diameter,2)))
+    
+    def get_dimensions(self):
+        super().dimensions()
 
 
