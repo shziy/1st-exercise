@@ -308,4 +308,73 @@ class square(two_dimensionals):
     def get_dimensions(self):
         super().dimensions()
 
+class rectangle(two_dimensionals):
+    def __init__(self,width,length):
+        self.length=length
+        self.width=width
+        self.__name='rectangle'
+        self.__n_dimensions=2
+        self.__tallest_side:length
 
+    def sides(self):
+        return('rectangle has 4 sides')
+    
+    def angles(self):
+        return('it has 4 angles')
+    
+    def get_total_area(self):
+        super().total_area()
+    
+    def get_volume(self):
+        super().volume()
+        
+    def area(self):
+        self.area=(self.width*self.length)
+        return('the area of this rectangle is {} '.format(round(self.area,2)))
+    
+    def perimeter(self):
+        self.perimeter=2*(self.width+self.length)
+        return('the perimeter of thid rectangle is {} '.format(round(self.perimeter,2)))
+    
+    def diameter(self):
+        self.diameter=(self.width**2+self.length**2)**0.5
+        return('it has two equal diameter and its length is {} '.format(round(self.diameter,2)))
+    
+    def get_dimensions(self):
+        super().dimensions()
+        
+class triangle(two_dimensionals):
+    def __init__(self,ab,bc,ac,sin_degree):
+        self.ab=ab
+        self.bc=bc
+        self.ac=ac
+        self.__name='triangle'
+        self.__n_dimensions=2
+        self.sins=sin_degree.sinus()
+        #aggregation
+    def area(self):
+        self.area=self.ab*self.bc*self.ac*self.sins*0.5
+        return('the area is {} '.format(round(self.area,2)))
+        
+    def sides(self):
+        return('it has 3 sides')
+    
+    def angles(self):
+        return('it has 3 angles')
+    
+    def get_total_area(self):
+        super().total_area()
+    
+    def get_volume(self):
+        super().volume()
+        
+        
+    def diameter(self):
+        return('it doesnt have diameter!!!')
+    
+    def perimeter(self):
+        self.perimeter=self.ab+self.bc+self.ac
+        return('the perimeter of the triangle is {} '.format(round(self.perimeter,2)))
+    
+    def get_dimensions(self):
+        super().dimensions()
