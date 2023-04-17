@@ -118,4 +118,63 @@ class rectangular_cube(cube):
         
     def get_dimensions(self):
         super().dimensions()
+#tarif moteghayer ha        
+class cone(threedimensionals):
+    def __init__(self,radius, height, slope_length):
+        self.radius=radius
+        self.height=height
+        self.slope_length=slope_length
+        self.__having_volume='yes'
+        self.__shape_name='cone'
+        self.n_dimensions=3
         
+    def volume(self):
+        self.volume=((math.pi/3)*self.height*(self.radius)**2)
+        return('the volume is {} '.format(round(self.volume,2)))
+    #polymorphysm hamin tor ke maloome chnd tabe yksan dr klas ha dirim ke kar yksan vli rvesh haye motefaveti anjam midhnd
+    def total_area(self):
+        self.total_area=(math.pi*self.radius*self.slope_length)+(math.pi*((self.radius)**2)*self.height)
+                                                                 
+        return('total area of cone is {} '.format(round(self.total_area,2)))
+    
+    def shape_kind(self):
+        
+        
+        return('cross and circle')
+    
+    def  get__sides(self):
+        return('cos its based on a circle and a cross it doesnt have any unique side')
+    
+    def get_dimensions(self):
+        super().dimensions()
+    
+    def side_area(self):
+        self.side_area=((math.pi)*self.radius)*(self.slope_length)
+        return('the side area is {} '.format(round(self.side_area,2)))
+    
+class sphere(threedimensionals):
+    def __init__(self,radius):
+        self.radius=radius
+        self.__having_volume='yes'
+        self.__shape_name='sphere'
+        self.__diameter=self.radius*2
+        self.n_dimensions=3
+        
+    def get_dimensions(self):
+        super().dimensions()
+         
+         
+    def area(self):
+         return('it doesnt have area just total area')
+         
+    def volume(self):
+         self.volume=(4*math.pi/3)*(self.radius)**3
+         return('the volume is {} '.format(round(self.volume,2)))     
+         
+    def total_area(self):
+         self.total_area=4*math.pi*(self.radius**2)
+         return('the total area is {} '.format(round(self.total_area,2)))
+         
+    def sides(self):
+         return('it doesnt have any sepecial sides')
+ #dr kol klas haye sebodi az class threedimensionals ers bari mikonnd       
